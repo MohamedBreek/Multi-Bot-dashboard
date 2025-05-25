@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi Bot Commands</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/aos/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/800023501591281674/1072946840166727780/477b3413f777ed01.png" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="max-width">
+      <div class="logo">
+        <a href="/index.html">Multi Bot<span></span></a>
+      </div>
+      <div class="lang-menu">
+        <ul>
+          <li><a href="/commands.html" class="en">English</a></li>
+          <li><a href="/arabic.html" class="ar">Arabic</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="commands-main">
+    <section class="commands-header">
+      <h1><i class="fas fa-terminal"></i> Multi Bot Commands</h1>
+      <p>Browse all available commands for Multi Bot. Use these to manage, moderate, and have fun in your Discord server!</p>
+    </section>
+    <section class="commands-list">
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-gavel"></i> <span>!ban &lt;user&gt; [reason]</span></div>
+        <div class="command-desc">Ban a user from the server. Only available to users with ban permissions.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-user-check"></i> <span>!kick &lt;user&gt; [reason]</span></div>
+        <div class="command-desc">Kick a user from the server. Only available to users with kick permissions.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-comment-slash"></i> <span>!mute &lt;user&gt; [duration]</span></div>
+        <div class="command-desc">Mute a user for a specified duration. Requires appropriate permissions.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-volume-up"></i> <span>!unmute &lt;user&gt;</span></div>
+        <div class="command-desc">Unmute a user in the server.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-broom"></i> <span>!clear &lt;amount&gt;</span></div>
+        <div class="command-desc">Delete a number of messages from a channel.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-info-circle"></i> <span>!userinfo &lt;user&gt;</span></div>
+        <div class="command-desc">Display information about a user.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-server"></i> <span>!serverinfo</span></div>
+        <div class="command-desc">Show information about the server.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-gamepad"></i> <span>!play &lt;game&gt;</span></div>
+        <div class="command-desc">Start a game with the bot.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-level-up-alt"></i> <span>!rank</span></div>
+        <div class="command-desc">Show your current level and XP.</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-cogs"></i> <span>!settings</span></div>
+        <div class="command-desc">Open the bot settings panel (if available).</div>
+      </div>
+      <div class="command-card">
+        <div class="command-title"><i class="fas fa-question-circle"></i> <span>!help</span></div>
+        <div class="command-desc">Show all available commands and usage information.</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>Made by <a href="https://discord.gg/7JpmG97eyx" target="_blank">iM7meD</a><br />Copyright <span class="far fa-copyright"></span> iM7meD 2023</span>
+  </footer>
+  <style>
+    .commands-main {
+      max-width: 900px;
+      margin: 120px auto 40px auto;
+      padding: 0 24px;
+    }
+    .commands-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .commands-header h1 {
+      color: #ff1616;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .commands-header p {
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .commands-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .command-card {
+      background: #23272a;
+      border-radius: 12px;
+      padding: 24px 20px;
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 4px solid #ff1616;
+    }
+    .command-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(255,22,22,0.15);
+      border-left: 4px solid #fff;
+    }
+    .command-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ff1616;
+    }
+    .command-desc {
+      font-size: 1rem;
+      color: #fff;
+      opacity: 0.85;
+    }
+    @media (max-width: 600px) {
+      .commands-main {
+        margin: 90px 0 20px 0;
+        padding: 0 8px;
+      }
+      .commands-list {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .command-card {
+        padding: 16px 8px;
+      }
+    }
+  </style>
+</body>
+</html>
