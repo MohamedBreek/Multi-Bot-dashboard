@@ -1,3 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Multi Bot</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #18191c;
+      color: #fff;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+    }
+    .notFound {
+      background: rgba(35,39,42,0.95);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(255,22,22,0.10);
+      padding: 48px 32px 32px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .notFound .img img {
+      width: 120px;
+      margin: 0 8px 18px 8px;
+      filter: drop-shadow(0 2px 16px #ff1616);
+    }
+    .notFound h1 {
+      font-size: 4rem;
+      color: #ff1616;
+      margin: 0 0 8px 0;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .notFound h2 {
+      font-size: 1.6rem;
+      margin: 0 0 12px 0;
+      color: #fff;
+      font-weight: 700;
+    }
+    .notFound h3 {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+    .notFound a.yes, .notFound a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 12px 36px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(255,22,22,0.10);
+    }
+    .notFound a.yes {
+      background: #ff1616;
+      color: #fff;
+      border: none;
+    }
+    .notFound a.yes:hover {
+      background: #fff;
+      color: #ff1616;
+    }
+    .notFound a:not(.yes) {
+      background: #23272a;
+      color: #fff;
+      border: 2px solid #ff1616;
+    }
+    .notFound a:not(.yes):hover {
+      background: #ff1616;
+      color: #fff;
+    }
+  </style>
+</head>
 <body>
     <section class="notFound">
         <div class="img">
@@ -13,3 +96,4 @@
         </div>
     </section>
 </body>
+</html>
