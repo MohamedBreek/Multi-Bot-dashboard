@@ -12,7 +12,7 @@
 
     <link
       rel="icon"
-      href="https://cdn.discordapp.com/attachments/800023501591281674/1072946840166727780/477b3413f777ed01.png"
+      href="https://i.ibb.co/fYQSnvWT/OBX-LOGOo.png"
     />
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -54,17 +54,11 @@
 
   <body>
     <div id="particles-js"></div>
-
-    <div class="scroll-up-btn">
-      <i class="fas fa-angle-up"></i>
-    </div>
-
     <nav class="navbar">
       <div class="max-width">
         <div class="logo">
-          <a href="#home">Multi Bot<span></span></a>
+          <a href="#home"><img src="https://i.ibb.co/fYQSnvWT/OBX-LOGOo.png" alt="Multi Bot Logo" style="height:40px;width:40px;border-radius:50%;vertical-align:middle;margin-right:10px;"> <span style="font-size:2rem;font-weight:700;vertical-align:middle;">Multi Bot</span></a>
         </div>
-
         <ul class="menu">
           <li><a href="#home" class="menu-btn">Home</a></li>
           <li><a href="#features" class="menu-btn">Features</a></li>
@@ -74,107 +68,93 @@
         </ul>
         <div class="lang-menu">
           <ul>
-            <li>
-              <a href="#" class="en">English</a>
-            </li>
-            <li>
-              <a href="/arabic.html" class="ar">Arabic</a>
-            </li>
+            <li><a href="#" class="en">English</a></li>
+            <li><a href="/arabic.html" class="ar">Arabic</a></li>
           </ul>
         </div>
-  
-    <div class="flex items-center justify-center h-screen bg-discord-gray text-white" >
-        <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=1068620487082647694&redirect_uri=http%3A%2F%2Flocalhost%3A3001%2Fapi%2Fauth%2Fdiscord%2Fredirect&response_type=code&scope=identify%20email%20guilds">
-            <span>Login</span>
-        </a>
-    </div>
         <div class="menu-btn">
           <i class="fas fa-bars"></i>
         </div>
       </div>
     </nav>
-
-    <section class="home" id="home">
+    <section class="home modern-hero" id="home">
       <div class="max-width">
-        <div class="home-content">
-          <div class="text-1">Hello, my name is</div>
-
-          <div class="text-2">Multi Bot</div>
-
-          <div class="text-3">And I am <span class="typing"></span></div>
-
-          <a class="this-is-pain" href="invite.html">Invite Me</a>
+        <div class="hero-content">
+          <img src="https://i.ibb.co/fYQSnvWT/OBX-LOGOo.png" alt="Multi Bot" class="hero-avatar" style="width:120px;height:120px;border-radius:50%;box-shadow:0 4px 32px rgba(255,22,22,0.15);margin-bottom:24px;">
+          <h1 class="hero-title" style="font-size:2.8rem;font-weight:700;color:#fff;margin-bottom:10px;">Multi Bot</h1>
+          <p class="hero-subtitle" style="font-size:1.3rem;color:#ff1616;margin-bottom:18px;">Simple. Powerful. Multipurpose Discord Bot.</p>
+          <div class="hero-typing text-3" style="font-size:1.2rem;color:#fff;margin-bottom:28px;">And I am <span class="typing"></span></div>
+          <div class="hero-actions" style="display:flex;flex-direction:row;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;z-index:2;position:relative;">
+            <button id="login" type="button" onclick="loginWithDiscord(event)" style="font-size:1.2rem;padding:16px 48px;border-radius:10px;background:#23272a;color:#fff;font-weight:600;box-shadow:0 2px 16px rgba(0,0,0,0.10);border:2px solid #ff1616;display:inline-flex;align-items:center;gap:10px;cursor:pointer;min-width:220px;outline: none;"> <i class="fab fa-discord"></i>Login with Discord</button>
+            <a href="/dashboard.html" class="hero-dashboard-btn" style="font-size:1.2rem;padding:16px 48px;border-radius:10px;background:#18191c;color:#ff1616;font-weight:600;box-shadow:0 2px 16px rgba(0,0,0,0.10);border:2px solid #ff1616;display:inline-flex;align-items:center;gap:10px;min-width:220px;"> <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            <a href="/commands.html" class="hero-commands-btn" style="font-size:1.2rem;padding:16px 48px;border-radius:10px;background:#23272a;color:#fff;font-weight:600;box-shadow:0 2px 16px rgba(0,0,0,0.10);border:2px solid #ff1616;display:inline-flex;align-items:center;gap:10px;min-width:220px;"> <i class="fas fa-terminal"></i>Commands</a>
+          </div>
+          <a class="this-is-pain hero-invite-btn" href="invite.html" style="font-size:1.2rem;padding:16px 48px;border-radius:10px;background:#ff1616;color:#fff;font-weight:600;box-shadow:0 2px 16px rgba(255,22,22,0.15);min-width:220px;display:block;margin:24px auto 0 auto;text-align:center;max-width:350px;">Invite Me</a>
+          <script>
+            // Remove any duplicate event listeners
+            document.getElementById('login').onclick = loginWithDiscord;
+            function loginWithDiscord(e) {
+              if (e) e.preventDefault();
+              var clientId = '1068620487082647694';
+              var redirectBase;
+              if (window.location.hostname === 'localhost') {
+                redirectBase = 'http://localhost:3001';
+              } else {
+                redirectBase = window.location.origin;
+              }
+              var url =
+                'https://discord.com/api/oauth2/authorize?client_id=' + clientId +
+                '&redirect_uri=' + encodeURIComponent(redirectBase + '/api/auth/discord/redirect') +
+                '&response_type=code&scope=identify%20email%20guilds';
+              window.location.href = url;
+            }
+          </script>
+          <div class="hero-socials" style="margin-top:32px;display:flex;gap:18px;justify-content:center;">
+            <a href="https://discord.gg/7JpmG97eyx" target="_blank" title="Discord Server" style="color:#7289da;font-size:2rem;"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/your-repo" target="_blank" title="GitHub" style="color:#fff;font-size:2rem;"><i class="fab fa-github"></i></a>
+            <a href="mailto:support@yourdomain.com" title="Email" style="color:#ff1616;font-size:2rem;"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="features" id="features">
       <div class="max-width">
-        <h2 class="title">My Features</h2>
-
-        <div class="features-content">
-          <div class="card">
+        <h2 class="title" style="font-size:2.2rem;font-weight:700;color:#ff1616;margin-bottom:40px;">Features</h2>
+        <div class="features-content" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+          <div class="card feature-card-glass">
             <div class="box">
               <i class="fas fa-cogs"></i>
-
               <div class="text">Customization</div>
-
-              <p>
-                Customize your Discord server using welcome and leave messages,
-                level up system, custom commands, NQN mode and much more!
-              </p>
+              <p>Customize your Discord server with welcome/leave messages, level up, custom commands, NQN mode, and more!</p>
             </div>
           </div>
-
-          <div class="card">
+          <div class="card feature-card-glass">
             <div class="box">
               <i class="fas fa-code"></i>
-
               <div class="text">Games</div>
-
-              <p>
-                Tons Of Games Are awaiting for you! claim all your deservings
-                and win!
-              </p>
+              <p>Enjoy a variety of games and fun commands to engage your community!</p>
             </div>
           </div>
-          
-          <div class="card">
+          <div class="card feature-card-glass">
             <div class="box">
               <i class="fas fa-lock"></i>
-
               <div class="text">Moderation</div>
-
-              <p>
-                Protect your Discord server with Multi Bot's robust moderation and
-                powerful commands to improve and speed up moderation.
-              </p>
+              <p>Protect your server with robust moderation and powerful commands for safe communities.</p>
             </div>
           </div>
-
-          <div class="card">
+          <div class="card feature-card-glass">
             <div class="box">
               <i class="fas fa-terminal"></i>
-
               <div class="text">Web Dashboard</div>
-
-              <p>
-                Configure each and every setting from the Web Dashboard of Multi bot!
-                (Coming Soon™)
-              </p>
+              <p>Configure every setting from a modern web dashboard. (Coming Soon™)</p>
             </div>
           </div>
-
-          <div class="card">
+          <div class="card feature-card-glass">
             <div class="box">
               <i class="fas fa-arrow-up"></i>
-
-              <div class="text">Level up System</div>
-
-              <p>
-                Make your server more active by rewarding users points, roles,
-                and more for being active.
-              </p>
+              <div class="text">Level Up System</div>
+              <p>Reward active users with points, roles, and more to boost engagement.</p>
             </div>
           </div>
         </div>
@@ -183,40 +163,22 @@
 
     <section class="stats" id="stats">
       <div class="max-width">
-        <h2 class="title">
-          My Stats
-        </h2>
-
-        <div class="stats-content">
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-server"></i>
-
-              <div class="text">Servers</div>
-
-              <p id="server-count"></p>
-            </div>
+        <h2 class="title" style="font-size:2.2rem;font-weight:700;color:#ff1616;margin-bottom:40px;">Stats</h2>
+        <div class="stats-cards" style="display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+          <div class="stat-card-glass">
+            <i class="fas fa-server"></i>
+            <div class="stat-title">Servers</div>
+            <div class="stat-value" id="server-count"></div>
           </div>
-
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-user"></i>
-
-              <div class="text">Users</div>
-
-              <p id="user-count"></p>
-            </div>
+          <div class="stat-card-glass">
+            <i class="fas fa-user"></i>
+            <div class="stat-title">Users</div>
+            <div class="stat-value" id="user-count"></div>
           </div>
-
-          <div class="card">
-            <div class="box">
-              <i class="fas fa-terminal"></i>
-
-              <div class="text">Commands Used</div>
-
-              <p>72390</p>
-
-            </div>
+          <div class="stat-card-glass">
+            <i class="fas fa-terminal"></i>
+            <div class="stat-title">Commands Used</div>
+            <div class="stat-value" id="command-count">72390</div>
           </div>
         </div>
       </div>
@@ -224,62 +186,42 @@
 
     <section class="contributors" id="contributors">
       <div class="max-width">
-          <h2 class="title">
-              Staff
-          </h2>
-          <div class="carousel owl-carousel">
-
-              <div class="cardd">
-                  <div class="boxx">
-                      <img src="https://cdn.discordapp.com/attachments/1066732948671438925/1071764087467429978/IMG-20210312-WA0002.jpg" alt>
-                      <div class="text">iM7meD#8344</div>
-                      <p>
-                          <button class="badges owner">Owner</button>
-                          <button class="badges developer">Developer</button>
-                      </p>
-                  </div>
-              </div>
-            
-        <div class="cardd">
-          <div class="boxx">
-              <img src="https://cdn.discordapp.com/attachments/779757384205598787/1081675878783799377/7B82549B-6FE1-4C65-A2E5-AB2C61985D15.jpg" alt>
-            
-              <div class="text">Tawfiq Khalilieh#1017
-             </div>
-              <p>
-                <button class="badges helper">Helper</button>
-                <button class="badges developer">Developer</button>
-              </p>
+        <h2 class="title" style="font-size:2.2rem;font-weight:700;color:#ff1616;margin-bottom:40px;">Staff</h2>
+        <div class="contributors-list" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;">
+          <div class="contributor-card-glass">
+            <img src="https://cdn.discordapp.com/attachments/1066732948671438925/1071764087467429978/IMG-20210312-WA0002.jpg" alt="iM7meD#8344" class="contributor-avatar" style="width:90px;height:90px;border-radius:50%;margin-bottom:16px;">
+            <div class="contributor-name">iM7meD#8344</div>
+            <div class="contributor-badges">
+              <span class="badges owner">Owner</span>
+              <span class="badges developer">Developer</span>
+            </div>
           </div>
-      </div>
-
+          <div class="contributor-card-glass">
+            <img src="https://cdn.discordapp.com/attachments/779757384205598787/1081675878783799377/7B82549B-6FE1-4C65-A2E5-AB2C61985D15.jpg" alt="Tawfiq Khalilieh#1017" class="contributor-avatar" style="width:90px;height:90px;border-radius:50%;margin-bottom:16px;">
+            <div class="contributor-name">Tawfiq Khalilieh#1017</div>
+            <div class="contributor-badges">
+              <span class="badges helper">Helper</span>
+              <span class="badges developer">Developer</span>
+            </div>
           </div>
+        </div>
       </div>
-  </section>
+    </section>
 
     <div class="loader-wrapper">
-      <img
-        src="https://cdn.discordapp.com/attachments/889523668252753931/928379313823313950/13335.gif"
-        alt="Loading..."
-      />
-
+      <img src="https://cdn.discordapp.com/attachments/889523668252753931/928379313823313950/13335.gif" alt="Loading..." style="width:80px;height:80px;filter:drop-shadow(0 2px 16px #ff1616);margin-bottom:18px;"/>
       <div class="longfazers">
         <span></span>
-
         <span></span>
-
         <span></span>
-
         <span></span>
       </div>
     </div>
-
-    <footer>
-      <span
-        >Made by
-        <a href="https://discord.gg/7JpmG97eyx" target="_blank">iM7meD</a
-        ><br />Copyright <span class="far fa-copyright"></span> iM7meD 2023</span
-      >
+    <footer style="background:#23272a;color:#fff;padding:32px 0;text-align:center;font-size:1.1rem;">
+      <span>
+        Made by <a href="https://discord.gg/7JpmG97eyx" target="_blank" style="color:#ff1616;font-weight:600;">iM7meD</a><br />
+        Copyright <span class="far fa-copyright"></span> iM7meD 2023
+      </span>
     </footer>
 
     <script src="./aos/aos.js"></script>
