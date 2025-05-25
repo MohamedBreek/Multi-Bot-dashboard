@@ -1,4 +1,4 @@
-# Multi-Bot Dashboard
+ # Multi-Bot Dashboard
 
 A modern web dashboard for managing and monitoring multiple bots with ease.
 
@@ -16,26 +16,6 @@ Multi-Bot Dashboard provides an intuitive interface to control, monitor, and con
 - User-friendly web interface
 - Customizable bot settings
 - [Add more features as needed!]
-
-## 📸 Screenshots
-
-<!-- Add screenshots here! Example: -->
-<!-- ![Dashboard Preview](./screenshots/dashboard.png) -->
-
-## 🛠️ Installation
-
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/MohamedBreek/Multi-Bot-dashboard.git
-    cd Multi-Bot-dashboard
-    ```
-
-2. **Open the dashboard:**
-    - Just open `index.html` in your browser.
-    - *Or* deploy on your favorite web server for sharing access.
-
-3. **Configuration:**
-    - [Describe any setup required: API keys, bot endpoints, config files, etc.]
 
 ## 🚦 Usage
 
