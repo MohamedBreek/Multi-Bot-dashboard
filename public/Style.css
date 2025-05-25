@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
 body {
+    background: #18191c !important;
+    color: #fff;
     font-family: 'Didact Gothic', sans-serif;
-    color:#333;
-        box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 * {
@@ -74,9 +82,14 @@ nav {
     width: 125px;
     border-radius: 5px;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-    display: block;
+    display: none;
+    z-index: 1000;
 }
 
+.lang-menu:hover ul,
+.lang-menu:focus-within ul {
+    display: block;
+}
 
 .lang-menu ul li {
     list-style: none;
@@ -90,6 +103,9 @@ nav {
     width: 100%;
     padding: 5px 10px;
     display: block;
+    color: #222;
+    font-weight: 500;
+    font-family: 'Didact Gothic', sans-serif;
 }
 
 .lang-menu ul li:hover {
