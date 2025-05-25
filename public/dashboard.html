@@ -10,6 +10,8 @@
     <title>Multi Bot</title>
 
     <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/aos/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <link
       rel="icon"
@@ -20,8 +22,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
-
-    <link rel="stylesheet" type="text/css" href="/assets/aos/aos.css" />
 
     <meta property="og:type" content="website" />
 
@@ -47,29 +47,119 @@
         <div class="logo">
           <a href="#home">Multi Bot<span></span></a>
         </div>
-        <header>
-          <nav>
-            <div class="lang-menu">
-              <ul>
-                <li>
-                  <a href="/index.html" class="en">English</a>
-                </li>
-                <li>
-                  <a href="/arabic.html" class="ar">Arabic</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
+        <div class="lang-menu">
+          <ul>
+            <li>
+              <a href="/index.html" class="en">English</a>
+            </li>
+            <li>
+              <a href="/arabic.html" class="ar">Arabic</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <div class="flex items-center justify-center h-screen bg-discord-gray text-white flex-col">
-      <div class="text-2xl">Welcome to dashboard.</div>
-      <div class="text-4xl mt-3 flex items-center font-medium" >
-        <img src='' id="avatar" class="rounded-full w-12 h-12 mr-3"/>
-        <div id="name"></div>
-      </div>
-      <a href="/" class="text-sm mt-5">Logout</a>
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <img src="/assets/bot-icon.png" alt="Bot Icon" class="sidebar-bot-icon" />
+          <h2>Multi Bot</h2>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active"><a href="#overview"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
+          <li><a href="#servers"><i class="fas fa-server"></i> Servers</a></li>
+          <li><a href="#settings"><i class="fas fa-cogs"></i> Settings</a></li>
+          <li><a href="#stats"><i class="fas fa-chart-bar"></i> Stats</a></li>
+          <li><a href="#premium"><i class="fas fa-gem"></i> Premium</a></li>
+        </ul>
+        <div class="sidebar-footer">
+          <a href="/" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </aside>
+      <main class="dashboard-main">
+        <section class="dashboard-profile" id="overview">
+          <div class="profile-card">
+            <img src="" id="avatar" class="profile-avatar"/>
+            <div class="profile-info">
+              <h3 id="name">User Name</h3>
+              <p>Welcome to your dashboard!</p>
+            </div>
+          </div>
+        </section>
+        <section class="dashboard-section" id="servers">
+          <h2>Your Servers</h2>
+          <div id="server-list" class="server-list">
+            <!-- Dynamically populated with user's servers -->
+            <p>Loading servers...</p>
+          </div>
+        </section>
+        <section class="dashboard-section" id="settings">
+          <h2>Bot Settings</h2>
+          <div class="settings-panel">
+            <p>Configure bot features for your selected server here.</p>
+            <!-- Add settings controls here -->
+          </div>
+        </section>
+        <section class="dashboard-section" id="stats">
+          <h2>Bot Stats</h2>
+          <div class="stats-cards">
+            <div class="stat-card">
+              <i class="fas fa-server"></i>
+              <div class="stat-title">Servers</div>
+              <div class="stat-value" id="server-count">-</div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-user"></i>
+              <div class="stat-title">Users</div>
+              <div class="stat-value" id="user-count">-</div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-terminal"></i>
+              <div class="stat-title">Commands Used</div>
+              <div class="stat-value" id="cmd-count">-</div>
+            </div>
+          </div>
+        </section>
+        <section class="dashboard-section" id="premium">
+          <h2>Premium</h2>
+          <div class="premium-panel">
+            <p>Unlock more features with Multi Bot Premium!</p>
+          </div>
+        </section>
+      </main>
     </div>
-</body>
+    <script>
+// Fetch real-time bot stats and update dashboard
+function fetchBotStats() {
+  fetch('https://api.statcord.com/v3/884467910494535741')
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.data && data.data[0]) {
+        const stats = data.data[0];
+        // Update stats
+        document.getElementById('server-count').textContent = stats.servers || '-';
+        document.getElementById('user-count').textContent = stats.users || '-';
+        document.getElementById('cmd-count').textContent = stats.commands || '-';
+        // Optionally, update server list if available
+        if (Array.isArray(stats.guilds) && document.getElementById('server-list')) {
+          const serverList = document.getElementById('server-list');
+          serverList.innerHTML = '';
+          stats.guilds.forEach(guild => {
+            const div = document.createElement('div');
+            div.className = 'server-card';
+            div.innerHTML = `<strong>${guild.name}</strong>`;
+            serverList.appendChild(div);
+          });
+        }
+      }
+    })
+    .catch(err => {
+      document.getElementById('server-count').textContent = '-';
+      document.getElementById('user-count').textContent = '-';
+      document.getElementById('cmd-count').textContent = '-';
+    });
+}
+window.addEventListener('DOMContentLoaded', fetchBotStats);
+</script>
+  </body>
 </html>
